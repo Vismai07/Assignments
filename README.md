@@ -31,6 +31,22 @@ The job-posting notebook accomplishes the following:
 
 The completed run produced an enriched DataFrame containing the original job title and description columns together with the four generated requirement fields.
 
+## BBC News Work Completed
+
+The BBC news notebook implements a complete article-processing workflow:
+
+1. Loads `bbc-news-data.csv` with its tab-separated format into a Pandas DataFrame.
+2. Limits the working dataset to the first 30 articles.
+3. Classifies each article into one of five topics: `Business`, `Entertainment`, `Politics`, `Sport`, or `Tech`.
+4. Tests the topic-classification prompt on a sample article and compares the prediction with the article's original category.
+5. Generates an objective two- to three-sentence summary for every selected article.
+6. Extracts named entities and groups them into `People`, `Organizations`, and `Places`.
+7. Handles empty article text and rejects invalid topic labels during processing.
+8. Adds the generated results to the DataFrame using the columns `Detected_Topic`, `Summary`, and `Key_Entities`.
+9. Displays both the generated columns and the complete final DataFrame containing the original article data.
+
+This demonstrates how one LangChain workflow can combine classification, summarization, and structured information extraction over a collection of news articles.
+
 ## Tools Used
 
 - Python and Pandas for data loading and DataFrame processing
